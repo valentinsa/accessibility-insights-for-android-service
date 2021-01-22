@@ -93,6 +93,12 @@ jobs:
                     }
             ]
 
+      - task: securedevelopmentteam.vss-secure-development-tools.build-task-codesignvalidation.CodeSign@1
+        displayName: codeSign validation
+        inputs:
+          Path: '$(build.artifactstagingdirectory)/signed-apk'
+          Targets: **.apk
+
       - task: PublishPipelineArtifact@1
         displayName: (signed-apk) publish artifact
         inputs:
