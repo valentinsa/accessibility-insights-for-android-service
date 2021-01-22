@@ -97,7 +97,7 @@ jobs:
         displayName: codeSign validation
         inputs:
           Path: '$(build.artifactstagingdirectory)/signed-apk'
-          Targets: **.apk
+          Targets: '**.apk'
 
       - task: PublishPipelineArtifact@1
         displayName: (signed-apk) publish artifact
